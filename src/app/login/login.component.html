@@ -1,0 +1,13 @@
+<div class="container">
+    <form class="form" >
+        <img src="./assets/Logo.png" alt="Flare" (ngSubmit)="signIn()">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" required email [(ngModel)]="credentials.email">
+    <!-- EM TUTAJ Z ERROREM -->
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required [(ngModel)]="credentials.password">
+    <!-- EM TUTAJ Z ERROREM -->
+        <button type="submit">Login</button>
+        <!-- do buttona można dodać disabled="!form.valid" -->
+    </form>
+</div>
