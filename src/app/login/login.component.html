@@ -1,8 +1,11 @@
 <div class="container">
-    <form class="form" >
-        <img src="./assets/Logo.png" alt="Flare" (ngSubmit)="signIn()">
-        <label for="username">Username</label>
-        <input type="text" id="username" name="username" required email [(ngModel)]="credentials.email">
+    <form class="form" (ngSubmit)="signIn()">
+        <img src="./assets/Logo.png" alt="Flare">
+        <label for="email">Email</label>
+        <input type="text" name="email" required email [(ngModel)]="credentials.email">
+        @if(signInError){
+        <em class="error">Email nieprawidłowy</em>
+        }
     <!-- EM TUTAJ Z ERROREM -->
         <label for="password">Password</label>
         <input type="password" id="password" name="password" required [(ngModel)]="credentials.password">
