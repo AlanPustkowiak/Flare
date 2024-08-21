@@ -1,0 +1,49 @@
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #544540;
+    height: 90vh;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    height: 400px;
+    width: 400px;
+    background-color: #eb764b;
+    border: black 1px solid;
+    border-radius: 15px;
+}
+
+img {
+    width: 100px;
+    height: 100px;
+    align-self: center;
+    padding-bottom: 30px;
+}
+
+label {
+    align-self: center;
+    margin-top: 10px;
+}
+
+#username{
+    margin-top: 10px;
+}
+
+#password{
+    margin-top: 10px;
+}
+
+input {
+    align-self: center;
+    width: 200px;
+}
+
+button {
+    width: 100px;
+    margin-top: 70px;
+    align-self: center;
+}

@@ -1,6 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 body{
     margin: 0;
+<<<<<<< HEAD
 }
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
@@ -9,3 +10,6 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+=======
+}
+>>>>>>> 10b858a62bb9a80724b8c8bbe366344818fdae24
