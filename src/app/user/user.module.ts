@@ -3,7 +3,12 @@ export interface IUser {
   phone: string;
   email: string;
   jobTitle: string;
-  password: string;
+  department: string;
+  team: string;
+  dateOfBirth: Date;
+  pesel: string;
+  localization: string;
+  city: string;
 }
 
 export interface ILogin {
