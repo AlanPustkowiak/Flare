@@ -4,11 +4,8 @@ export interface IUser {
   email: string;
   jobTitle: string;
   department: string;
-  team: string;
   dateOfBirth: Date;
-  pesel: string;
-  localization: string;
-  city: string;
+  workLocation: string;
 }
 
 export interface ILogin {
