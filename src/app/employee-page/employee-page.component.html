@@ -1,1 +1,23 @@
-<p>employee-page works!</p>
+<div class="flex flex-col items-center">
+    <mat-form-field class="w-fit mt-44">
+        <mat-label>Imię i nazwisko</mat-label>
+        <input matInput [(ngModel)]="employee.name">
+    </mat-form-field>
+    <mat-form-field class="w-fit">
+        <mat-label>Email</mat-label>
+        <input matInput [(ngModel)]="employee.email">
+    </mat-form-field>
+    <mat-form-field class="w-fit">
+        <mat-label>Stanowisko</mat-label>
+        <input matInput [(ngModel)]="employee.jobTitle">
+    </mat-form-field>
+    <mat-form-field class="w-fit">
+        <mat-label>Telefon</mat-label>
+        <input matInput [(ngModel)]="employee.phone">
+    </mat-form-field>
+    <mat-form-field class="w-fit">
+        <mat-label>Lokalizacja</mat-label>
+        <input matInput [(ngModel)]="employee.workLocation">
+    </mat-form-field>
+    <button mat-raised-button class="w-fit" color="primary" (click)="addEmployee(employee)">Dodaj pracownika</button>
+</div>
