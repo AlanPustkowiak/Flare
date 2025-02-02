@@ -6,11 +6,10 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 
 @Component({
-  selector: 'app-login',
-  standalone: true,
-  imports: [ FormsModule, MatFormFieldModule, MatInputModule ],
-  templateUrl: './login.component.html',
-  styleUrl: './login.component.css'
+    selector: 'app-login',
+    imports: [FormsModule, MatFormFieldModule, MatInputModule],
+    templateUrl: './login.component.html',
+    styleUrl: './login.component.css'
 })
 export class LoginComponent {
   credentials: ILogin = { email: '', password: '' };

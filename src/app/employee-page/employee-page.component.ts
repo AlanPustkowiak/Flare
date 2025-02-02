@@ -6,11 +6,10 @@ import { MatInputModule } from '@angular/material/input';
 import { Employee } from '../employee.model';
 
 @Component({
-  selector: 'app-employee-page',
-  standalone: true,
-  imports: [ MatFormField, MatInputModule, MatButton, FormsModule ],
-  templateUrl: './employee-page.component.html',
-  styleUrl: './employee-page.component.css'
+    selector: 'app-employee-page',
+    imports: [MatFormField, MatInputModule, MatButton, FormsModule],
+    templateUrl: './employee-page.component.html',
+    styleUrl: './employee-page.component.css'
 })
 export class EmployeePageComponent {
   public employee: Employee = {

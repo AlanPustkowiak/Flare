@@ -9,11 +9,10 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 
 @Component({
-  selector: 'app-home',
-  standalone: true,
-  imports: [ NgFor, MatTableModule, MatIconModule, MatButtonModule, RouterLink],
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+    selector: 'app-home',
+    imports: [NgFor, MatTableModule, MatIconModule, MatButtonModule, RouterLink],
+    templateUrl: './home.component.html',
+    styleUrl: './home.component.css'
 })
 export class HomeComponent implements OnInit {
   public employees: Employee[] = [];
