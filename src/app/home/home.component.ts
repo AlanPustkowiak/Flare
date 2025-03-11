@@ -1,16 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { Employee } from '../employee.model';
-import { EmployeeService } from '../employee.service';
 import { HttpErrorResponse } from '@angular/common/http';
-import { NgFor } from '@angular/common';
 import {MatTableModule} from '@angular/material/table';
 import { Router, RouterLink } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { Employee } from '../employee/employee.model';
+import { EmployeeService } from '../employee/employee.service';
 
 @Component({
     selector: 'app-home',
-    imports: [NgFor, MatTableModule, MatIconModule, MatButtonModule, RouterLink],
+    imports: [MatTableModule, MatIconModule, MatButtonModule, RouterLink],
     templateUrl: './home.component.html',
     styleUrl: './home.component.css'
 })

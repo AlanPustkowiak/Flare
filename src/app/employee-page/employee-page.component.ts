@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { FormsModule, NgModel } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { MatButton } from '@angular/material/button';
 import { MatFormField } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { Employee } from '../employee.model';
+import { Employee, EmployeeStatus } from '../employee/employee.model';
 
 @Component({
     selector: 'app-employee-page',
@@ -17,19 +17,19 @@ export class EmployeePageComponent {
     email: '',
     jobTitle: '',
     phone: '',
-    workLocation: ''
+    workLocation: '',
+    dateOfBirth: new Date(),
+    department: {
+      id: 0,
+      name: ''
+    },
+    hireDate: new Date(),
+    status: EmployeeStatus.ACTIVE
   };
 
   constructor() { }
 
   public addEmployee(employee: Employee): void {
-    // employee.addEmployees(this.employee).subscribe(
-    //   (response: Employee) => {
-    //     console.log(response);
-    //   },
-    //   (error: any) => {
-    //     console.log(error);
-    //   }
-    // );
+    
   }
 }
