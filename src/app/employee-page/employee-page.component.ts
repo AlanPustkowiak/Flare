@@ -10,10 +10,23 @@ import { Router } from '@angular/router';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { Department } from '../department/department.model';
 import { HttpErrorResponse } from '@angular/common/http';
+import { MatOption } from '@angular/material/core';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatSelectModule } from '@angular/material/select';
 
 @Component({
     selector: 'app-employee-page',
-    imports: [MatFormField, MatInputModule, MatButton, FormsModule],
+    imports: [MatFormField, 
+      MatInputModule, 
+      MatButton, 
+      FormsModule, 
+      MatOption, 
+      MatSnackBarModule,
+      MatDatepickerModule,
+      MatSelectModule,
+      MatNativeDateModule
+    ],
     templateUrl: './employee-page.component.html',
     styleUrl: './employee-page.component.css'
 })

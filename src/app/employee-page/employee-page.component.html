@@ -1,25 +1,61 @@
-<div class="flex flex-col items-center">
-    <mat-form-field class="w-fit mt-44">
-        <mat-label>Imię i nazwisko</mat-label>
-        <input matInput [(ngModel)]="employee.name">
-    </mat-form-field>
-    <mat-form-field class="w-fit">
-        <mat-label>Email</mat-label>
-        <input matInput [(ngModel)]="employee.email">
-    </mat-form-field>
-    <mat-form-field class="w-fit">
-        <mat-label>Stanowisko</mat-label>
-        <input matInput [(ngModel)]="employee.jobTitle">
-    </mat-form-field>
-    <mat-form-field class="w-fit">
-        <mat-label>Telefon</mat-label>
-        <input matInput [(ngModel)]="employee.phone">
-    </mat-form-field>
-    <mat-form-field class="w-fit">
-        <mat-label>Lokalizacja</mat-label>
-        <input matInput [(ngModel)]="employee.workLocation">
-    </mat-form-field>
-    <button mat-raised-button class="w-fit" color="primary" (click)="addEmployee()">Dodaj pracownika</button>
-</div>
+<div class="container mx-auto pt-10 max-w-md">
+    <h2 class="text-2xl font-bold mb-6 text-center">Dodaj nowego pracownika</h2>
 
-<!-- TODO - aktualizacja tego komponentu -->
+    <div class="flex flex-col gap-4">
+        <mat-form-field appearance="outline">
+            <mat-label>Imię i nazwisko</mat-label>
+            <input matInput [(ngModel)]="employee.name" required>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Email</mat-label>
+            <input matInput type="email" [(ngModel)]="employee.email" required>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Stanowisko</mat-label>
+            <input matInput [(ngModel)]="employee.jobTitle" required>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Telefon</mat-label>
+            <input matInput [(ngModel)]="employee.phone">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Lokalizacja</mat-label>
+            <input matInput [(ngModel)]="employee.workLocation">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Departament</mat-label>
+            <mat-select [(ngModel)]="employee.department" required>
+                <mat-option *ngFor="let department of departments" [value]="department.id">
+                    {{department.name}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Data zatrudnienia</mat-label>
+            <input matInput [matDatepicker]="hirePicker" [(ngModel)]="employee.hireDate">
+            <mat-datepicker-toggle matIconSuffix [for]="hirePicker"></mat-datepicker-toggle>
+            <mat-datepicker #hirePicker></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Status</mat-label>
+            <mat-select [(ngModel)]="employee.status">
+                <mat-option *ngFor="let status of statuses" [value]="status">
+                    {{status}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <div class="flex justify-between mt-4">
+            <button mat-raised-button color="primary" (click)="addEmployee()">Dodaj</button>
+            <button mat-raised-button color="warn" routerLink="/home">Anuluj</button>
+        </div>
+    </div>
+
+</div>
