@@ -61,7 +61,23 @@ export class HomeComponent implements OnInit {
     this.route.navigate(['/employee', id]);
   }
 
-  public futureModal(): void {
-    this.route.navigate(['/employeePage']);
+  public deleteEmployee(id: number, event: Event): void {
+    event.stopPropagation();
+    if(confirm('Czy na pewno chcesz usunąć tego pracownika?')){
+      this.employeeService.deleteEmployees(id).subscribe({
+        next: () => {
+          this.snackBar.open('Pracownik został pomyślnie usunięty', 'Zamknij', {
+            duration: 3000
+          });
+          this.getEmployees();
+        },
+        error: (error: HttpErrorResponse) => {
+          this.snackBar.open('Błąd podczas usuwania pracownika', 'Zamknij', {
+            duration: 3000
+          });
+          console.log(error.message);
+        }
+      });
+    }
   }
 }
