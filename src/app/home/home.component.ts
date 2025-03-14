@@ -7,10 +7,12 @@ import { MatButtonModule } from '@angular/material/button';
 import { Employee } from '../employee/employee.model';
 import { EmployeeService } from '../employee/employee.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatFormField, MatLabel } from '@angular/material/form-field';
+import { FormsModule, NgModel } from '@angular/forms';
 
 @Component({
     selector: 'app-home',
-    imports: [MatTableModule, MatIconModule, MatButtonModule, RouterLink],
+    imports: [MatTableModule, MatIconModule, MatButtonModule, RouterLink, MatFormField, MatLabel, FormsModule],
     templateUrl: './home.component.html',
     styleUrl: './home.component.css'
 })
