@@ -19,7 +19,7 @@ import { FormsModule, NgModel } from '@angular/forms';
 export class HomeComponent implements OnInit {
   public employees: Employee[] = [];
   public searchQuery: string = '';
-  displayedColumns = ['name', 'jobTitle', 'phone', 'email', 'department' , 'workLocation', 'actions'];
+  displayedColumns = ['name', 'email', 'jobTitle', 'phone', 'department' , 'workLocation', 'actions'];
 
   constructor(private employeeService: EmployeeService, private route: Router, private snackBar: MatSnackBar) { }
 
