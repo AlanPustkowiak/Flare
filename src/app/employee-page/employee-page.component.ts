@@ -1,31 +1,35 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { MatButton } from '@angular/material/button';
-import { MatFormField } from '@angular/material/form-field';
+import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { Employee, EmployeeStatus } from '../employee/employee.model';
 import { EmployeeService } from '../employee/employee.service';
 import { DepartmentService } from '../department/department.service';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { Department } from '../department/department.model';
 import { HttpErrorResponse } from '@angular/common/http';
-import { MatOption } from '@angular/material/core';
+import { MatOptionModule } from '@angular/material/core';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
+import { CommonModule } from '@angular/common';
 
 @Component({
     selector: 'app-employee-page',
-    imports: [MatFormField, 
+    imports: [
+      MatFormFieldModule, 
       MatInputModule, 
-      MatButton, 
+      MatButtonModule, 
       FormsModule, 
-      MatOption, 
+      MatOptionModule, 
       MatSnackBarModule,
       MatDatepickerModule,
       MatSelectModule,
-      MatNativeDateModule
+      MatNativeDateModule,
+      RouterLink,
+      CommonModule
     ],
     templateUrl: './employee-page.component.html',
     styleUrl: './employee-page.component.css'
