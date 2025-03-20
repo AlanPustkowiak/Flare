@@ -6,13 +6,25 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { Employee } from '../employee/employee.model';
 import { EmployeeService } from '../employee/employee.service';
-import { MatSnackBar } from '@angular/material/snack-bar';
-import { MatFormField, MatLabel } from '@angular/material/form-field';
-import { FormsModule, NgModel } from '@angular/forms';
+import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { MatInputModule } from '@angular/material/input';
 
 @Component({
     selector: 'app-home',
-    imports: [MatTableModule, MatIconModule, MatButtonModule, RouterLink, MatFormField, MatLabel, FormsModule],
+    imports: [
+      MatTableModule, 
+      MatIconModule, 
+      MatButtonModule, 
+      RouterLink, 
+      MatFormFieldModule, 
+      MatInputModule,
+      FormsModule, 
+      CommonModule,
+      MatSnackBarModule
+    ],
     templateUrl: './home.component.html',
     styleUrl: './home.component.css'
 })
@@ -60,7 +72,7 @@ export class HomeComponent implements OnInit {
   }
 
   public viewEmployeeDetails(id: number): void {
-    this.route.navigate(['/employee', id]);
+    this.route.navigate(['/employeeDetails', id]);
   }
 
   public deleteEmployee(id: number, event: Event): void {
