@@ -3,7 +3,7 @@
         <h2 class="text-2xl font-bold">Lista pracowników</h2>
 
         <div class="flex items-center gap-4">
-            <mat-form-field appearance="outline" class="w-64">
+            <mat-form-field appearance="fill" class="w-64">
                 <mat-label>Wyszukaj pracownika</mat-label>
                 <input matInput [(ngModel)]="searchQuery" (keyup.enter)="searchEmployees()">
                 <button *ngIf="searchQuery" matSuffix mat-icon-button aria-label="Clear" (click)="searchQuery=''; getEmployees()">
