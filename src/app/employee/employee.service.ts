@@ -30,7 +30,7 @@ export class EmployeeService {
   }
 
   public deleteEmployees(emplyeeId: number): Observable<void> {
-    return this.http.delete<void>(`${this.apiServer}/employee/delete/${emplyeeId}`);
+    return this.http.delete<void>(`${this.apiServer}/employees/${emplyeeId}`);
   }
 
   public searchEmployees(query: string): Observable<Employee[]> {
