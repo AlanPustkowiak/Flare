@@ -3,10 +3,12 @@ import { MatCardModule } from '@angular/material/card';
 import { RouterLink } from '@angular/router';
 import { DepartmentService } from '../department/department.service';
 import { Department } from '../department/department.model';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-department-list',
-  imports: [ MatCardModule, RouterLink ],
+  imports: [ MatCardModule, RouterLink, MatIconModule, MatButtonModule ],
   templateUrl: './department-list.component.html',
   styleUrl: './department-list.component.css'
 })

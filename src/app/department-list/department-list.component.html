@@ -1,10 +1,23 @@
-<div class="flex flex-row justify-start mt-2">
-    <mat-card class="w-sm h-48 ml-2">
-        <mat-card-header>
-            <mat-card-title>Departament</mat-card-title>
-        </mat-card-header>
-        <mat-card-content>
-            <p>Teskt w środku</p>
-        </mat-card-content>
-    </mat-card>
+<div class="container mx-4 mt-8">
+    <div class="flex flex-row justify-start mt-2">
+        <button mat-raised-button routerLink="/departmentAdd">
+            <mat-icon>add</mat-icon>
+            Dodaj departament
+        </button>
+    </div>
+
+
+    <div class="flex flex-row justify-start mt-2">
+        @for (department of departments; track department.id)
+        {
+        <mat-card class="w-sm h-48">
+            <mat-card-header>
+                <mat-card-title>{{ department.name }}</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <p>{{ department.description }}</p>
+            </mat-card-content>
+        </mat-card>
+        }
+    </div>    
 </div>
