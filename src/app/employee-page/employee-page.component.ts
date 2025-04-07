@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -10,20 +10,37 @@ import { Router, RouterLink } from '@angular/router';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { Department } from '../department/department.model';
 import { HttpErrorResponse } from '@angular/common/http';
-import { MatOptionModule } from '@angular/material/core';
+import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE, MatOptionModule } from '@angular/material/core';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
 import { CommonModule } from '@angular/common';
 
+export const MY_DATE_FORMATS = {
+  parse: {
+    dateInput: 'DD/MM/YYYY',
+  },
+  display: {
+    dateInput: 'DD/MM/YYYY',
+    monthYearLabel: 'MMM YYYY',
+    dateA11yLabel: 'LL',
+    monthYearA11yLabel: 'MMMM YYYY',
+  },
+};
+
 @Component({
     selector: 'app-employee-page',
+    providers: [
+      {provide: MAT_DATE_LOCALE, useValue: 'pl-PL'},
+      {provide: MAT_DATE_FORMATS, useValue: MY_DATE_FORMATS}
+    ],
     imports: [
       MatFormFieldModule, 
       MatInputModule, 
       MatButtonModule, 
       FormsModule, 
       MatOptionModule, 
+      ReactiveFormsModule,
       MatSnackBarModule,
       MatDatepickerModule,
       MatSelectModule,
@@ -51,14 +68,18 @@ export class EmployeePageComponent implements OnInit {
 
   public departments: Department[] = [];
   public statuses = Object.values(EmployeeStatus);
+  hireDateControl = new FormControl(new Date());
 
   constructor(
     private employeeService: EmployeeService,
     private departmentService: DepartmentService,
     private router: Router,
-    private snackBar: MatSnackBar
+    private snackBar: MatSnackBar,
+    private dateAdapter: DateAdapter<Date>
 
-  ) { }
+  ) { 
+    this.dateAdapter.setLocale('pl-PL');
+  }
 
   ngOnInit(): void {
     this.loadDepartments();
@@ -79,6 +100,7 @@ export class EmployeePageComponent implements OnInit {
   }
 
   public addEmployee(): void {
+    this.employee.hireDate = this.hireDateControl.value || new Date();
     this.employeeService.addEmployees(this.employee).subscribe({
       next: (response: Employee) => {
         this.snackBar.open('Employee added successfully', 'Dismiss', {

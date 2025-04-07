@@ -7,10 +7,10 @@
     </div>
 
 
-    <div class="flex flex-row justify-start mt-2">
+    <div class="flex flex-row justify-start">
         @for (department of departments; track department.id)
         {
-        <mat-card class="w-sm h-48">
+        <mat-card class="w-sm h-48 mr-2 mt-2">
             <mat-card-header>
                 <mat-card-title>{{ department.name }}</mat-card-title>
             </mat-card-header>

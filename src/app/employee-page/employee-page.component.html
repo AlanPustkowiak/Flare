@@ -38,7 +38,7 @@
 
         <mat-form-field appearance="fill">
             <mat-label>Data zatrudnienia</mat-label>
-            <input matInput [matDatepicker]="hirePicker" [(ngModel)]="employee.hireDate">
+            <input matInput [matDatepicker]="hirePicker" [(ngModel)]="employee.hireDate" [formControl]="hireDateControl">
             <mat-datepicker-toggle matIconSuffix [for]="hirePicker" color="secondary"></mat-datepicker-toggle>
             <mat-datepicker #hirePicker></mat-datepicker>
         </mat-form-field>
